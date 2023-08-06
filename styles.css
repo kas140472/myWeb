@@ -1,0 +1,105 @@
+/* styles.css */
+
+/* Global styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f6f6f6;
+    color: #333;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: #4285f4;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-me {
+    margin: 70;
+    border: grey solid 1px;
+    border-radius: 2em;
+    padding: 40;
+    background-color: fff;
+  }
+  
+  .about-me p {
+    margin-bottom: 10px;
+  }
+  
+  .intro {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .cc-btn,
+  .lc-btn,
+  .mainIndex-btn{
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cc-btn:hover,
+  .lc-btn:hover,
+  .mainIndex-btn:hover {
+    background-color: #3367d6;
+  }
+  
+  .contact {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  /* Navigation */
+  nav {
+    background-color: #4285f4;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  nav a:hover {
+    background-color: #3367d6;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
+    .container {
+      max-width: 90%;
+    }
+  
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    nav a {
+      margin: 5px;
+    }
+  }
+  
