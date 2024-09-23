@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kriti Shukla | Projects</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Custom CSS for animations -->
+    <style>
+        .project-card {
+            transition: transform 0.3s;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+        .project-card img {
+            width: 100%;
+            height: auto;
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            transition: color 0.3s;
+        }
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #f8f9fa !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Kriti Shukla</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./experience.html">Work Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./organizations.html">Organizations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./conferences.html">Conferences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/kriti-shukla-258396182/">LinkedIn</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/kas140472">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="py-5 mt-5">
+        <div class="container">
+            <h1 class="text-center mb-4">Projects</h1>
+
+            
+
+            <!-- Web Development Projects -->
+            <h2 class="mt-5">Full Stack, Android</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <img src="androidAppImg.png" alt="Stock Portfolio Management Android App">
+                        <div class="p-3">
+                            <h5>Stock Portfolio Management Android App – Virtual Trading & Market Insights</h5>
+                            <p>Designed and developed an Android application enabling users to search stock symbols, view detailed stock information, and trade using virtual currency. The app features real-time data through Finnhub APIs, a portfolio management system, and a customizable favorites list. Users can analyze recommendation trends, social sentiments, and historical earnings via interactive charts. The app integrates third-party libraries for enhanced performance and visuals, including Volley for HTTP requests, Picasso, Glide, and HighCharts.</p>
+                            <p>Tools and Technologies: Android Studio · Java · Finnhub APIs · XML · MongoDB (NoSQL DBMS) · NodeJS · Picasso · Glide · HighCharts</p>
+                            <a href="https://github.com/kas140472/StockTradeAndroidApp" target="_blank" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <img src="stockAngularImg.png" alt="Advanced Stock Monitoring: A Cloud-Powered Search and Virtual Trading Platform with Angular and Node.js">
+                        <div class="p-3">
+                            <h5>Advanced Stock Monitoring: A Cloud-Powered Search and Virtual Trading Platform with Angular and Node.js</h5>
+                            <p>A cloud-hosted stock trading web application featuring real-time stock data, virtual trading, user portfolio management, and watchlist functionality. It leverages AJAX for asynchronous data retrieval, JSON for data exchange, and Bootstrap for responsive design, with data from Finnhub and Polygon.io APIs.
+<br>
+                                The backend, built with Node.js and Express, is hosted on Google App Engine, while MongoDB Atlas stores watchlist and portfolio data. Features include live stock quotes, dynamic buy/sell options, autocomplete, and data visualization using Highcharts.</p>
+                            <p>Tools and Technologies: AJAX · JSON · HTML5 · Bootstrap · Angular · Angular Material · Angular CLI · TypeScript · Node.js · Express.js · MongoDB · NoSQL · Google Cloud Platform (GCP)</p>
+                            <a href="https://kas140472.github.io/RockPaperScissors/" target="_blank" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <img src="gameAppImg.png" alt="Anime-Themed Game-Based Learning Application">
+                        <div class="p-3">
+                            <h5>Anime-Themed Game-Based Learning Application using Web Technologies</h5>
+                            <p>Developed an engaging, interactive game-based learning website aimed at addressing monotony and limited interactivity in traditional learning methods. The platform integrates puzzles and challenges designed to boost coding skills, critical thinking and problem-solving, with users earning "Haki" rewards to unlock hints and progress through levels. The solution includes real-time progress tracking, instant feedback, and a leaderboard to encourage friendly competition. The app’s anime-based theme capitalizes on the $31 billion global anime market (2023), making learning more relatable.</p>
+                            <p>Tools and Technologies: HTML · CSS · JavaScript · Python · Flask · Bootstrap</p>
+                            <a href="https://codepen.io/kas140472/full/PoBZZgm" target="_blank" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <img src="stockFlaskImg.png" alt="Cloud-based Stock Information Dashboard">
+                        <div class="p-3">
+                            <h5>Cloud-based Stock Information Dashboard using Flask and HighCharts</h5>
+                            <p>Developed a dynamic stock information web application using Python, Flask, and the Finnhub Stock API, deployed on Google Cloud Platform (GCP). The application allows users to search for stock data, view company profiles, stock summaries, historical price data, and news articles in real-time. Implemented data visualization using HighCharts for stock price trends and volume, integrating the Polygon.io API for historical data. Utilized front-end technologies such as HTML, CSS, and JavaScript to create an interactive and user-friendly interface.
+                            </p>
+                            <p>Tools and Technologies: HTML · CSS · JavaScript · Python · Flask · Google Cloud App Engine · Finnhub API · Polygon.io API · HighCharts</p>
+                            <a href="https://kas24-24.wl.r.appspot.com/" target="_blank" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <img src="imageFilterImg.png" alt="Screen & Page">
+                        <div class="p-3">
+                            <h5>Screen & Page</h5>
+                            <p>Platform for tracking and organizing your entertainment journey.</p>
+                            <a href="https://kas140472.github.io/ScreenAndPage/" target="_blank" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+            <!-- Data Science Projects -->
+            <h2 class="mt-5">Data Science, ML</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <!-- <img src="serverAB_mixed1.png" alt="Multi-Class and Multi-Label Classification & Clustering Analysis"> -->
+                        <div class="p-3">
+                            <h5>Multi-Class and Multi-Label Classification & Clustering Analysis</h5>
+                            <p>Implemented multi-class and multi-label classification on the Anuran Calls dataset using SVMs with Gaussian and L1-penalized kernels, applying techniques like SMOTE for class imbalance and evaluating performance with metrics such as precision, recall, and AUC.
+                                <br>Conducted K-means clustering on the same dataset to identify clusters and evaluated clustering accuracy by calculating Hamming distances and scores between true labels and cluster assignments.</p>
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <!-- <img src="serverAB_mixed1.png" alt="Multi-Class and Multi-Label Classification & Clustering Analysis"> -->
+                        <div class="p-3">
+                            <h5>Class Imbalance and Model Evaluation</h5>
+                            <p>Applied data imputation and coefficient of variation (CV) for feature selection on the APS Failure dataset, trained and evaluated Random Forest and XGBoost models with and without SMOTE for class imbalance, and analyzed performance metrics including confusion matrices, ROC, AUC, and cross-validation.</p>
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <!-- <img src="serverAB_mixed1.png" alt="Multi-Class and Multi-Label Classification & Clustering Analysis"> -->
+                        <div class="p-3">
+                            <h5>Decision Trees and Regression Models Analysis</h5>
+                            <p>Built and pruned decision trees for the Acute Inflammations dataset, converted decision rules into IF-THEN rules, and performed data imputation, correlation analysis, and feature selection for the Communities and Crime dataset; fitted and evaluated linear, ridge, LASSO, PCR, and boosting regression models with cross-validation.</p>
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4"></div>
+                    <div class="project-card">
+                        <img src="MLProjectImg.png" alt="Multi-Class and Multi-Label Classification & Clustering Analysis">
+                        <div class="p-3">
+                            <h5>Single Track Deposit Geometry Prediction using Machine Learning</h5>
+                            <p>Led team of four to develop Machine Learning models (98% accuracy) predicting Laser Directed Energy Deposition’s single-track deposit geometry, enhancing additive manufacturing product quality.
+                                <br>Conducted data pre-processing (randomization and normalization), Hyper-parameter optimization, Feature importance study</p>
+                                <p>Tools and Technologies: Team Leadership · Machine Learning · 3D Printing · Data Analysis · Data Science · Data Processing</p>
+                            <a href="https://drive.google.com/file/d/1AIwXT2LRgXDTvAGXsHiapmVK3BJHxdcl/view?usp=embed_facebook" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Computer Networks Projects -->
+            <h2 class="mt-5">Computer Networks</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <img src="socketProgImg.png" alt="Multi-Class and Multi-Label Classification & Clustering Analysis">
+                        <div class="p-3">
+                            <h5>Optimized Meeting Scheduling Application using C/C++ and Socket Programming</h5>
+                            <p>Developed a meeting scheduling application utilizing C/C++ on a Unix-based system, employing both TCP and UDP protocols to establish efficient communication between backend and main servers. This system identifies optimal meeting times based on participant availability, enhancing collaboration and productivity.
+                                </p>
+                               <p> Tools and Technologies: C (Programming Language) · User Datagram Protocol (UDP) · C++ · Socket Programming · Unix · Internet Protocol Suite (TCP/IP) · Linux
+                            </p>
+                            <a href="https://github.com/kas140472/meeting_scheduler_app" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-dark text-light text-center py-5">
+        <div class="container">
+            <h2 class="mb-4">Contact Me</h2>
+            <p>Feel free to reach out via email or connect with me on social media.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="mailto:kritishukla0114@gmail.com" class="btn btn-outline-light"><i class="bi bi-envelope-fill"></i> Email</a>
+                <a href="https://www.linkedin.com/in/kriti-shukla-258396182/" target="_blank" class="btn btn-outline-light"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/kas140472" target="_blank" class="btn btn-outline-light"><i class="bi bi-github"></i> GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
