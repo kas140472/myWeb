@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Modal Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .resume-section {
+            text-align: center;
+            padding: 50px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .resume-button {
+            background-color: #0056b3;
+            color: white;
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .resume-button:hover {
+            background-color: #003d80;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 1000px;
+        }
+
+        .close {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume-section">
+    <h2>Resume</h2>
+    <button id="resumeBtn" class="resume-button">View My Resume</button>
+</div>
+
+<!-- The Modal -->
+<div id="resumeModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <iframe src="Resume_DS_for_website.pdf"></iframe>
+    </div>
+</div>
+
+<script>
+    // Get the modal
+    const modal = document.getElementById('resumeModal');
+    
+    // Get the button that opens the modal
+    const btn = document.getElementById('resumeBtn');
+    
+    // Get the <span> element that closes the modal
+    const span = document.getElementsByClassName('close')[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+        modal.style.display = 'block';
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = 'none';
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
