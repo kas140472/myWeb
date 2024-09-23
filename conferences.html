@@ -15,23 +15,49 @@
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
-        .zoom:hover {
-            transform: scale(1.05);
-            transition: 0.3s;
+        .timeline {
+            position: relative;
+            padding: 20px 0;
         }
-        .card {
-    color: inherit; /* Inherit text color from parent */
-    text-decoration: none; /* Remove underline from link */
-}
-
-.card:hover {
-    background-color: #f0f0f0; /* Change this color to your desired hover color */
-    transition: background-color 0.3s; /* Smooth transition */
-}
-section.py-5 {
-    margin-top: 40px; /* Adjust this value as needed */
-}
-
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: #007bff;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 10px 20px;
+            box-sizing: border-box;
+        }
+        .timeline-item.left {
+            left: 0;
+        }
+        .timeline-item.right {
+            left: 50%;
+        }
+        .timeline-item h5 {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .timeline-item p {
+            margin: 0;
+        }
+        .timeline-item .date {
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+        .timeline-item .link {
+            margin-top: 10px;
+        }
+        .py-5{
+            margin-top: 80px;
+        }
     </style>
 </head>
 <body>
@@ -59,80 +85,55 @@ section.py-5 {
     </nav>
 
     <!-- Conferences Section -->
-    <!-- Organizations Section -->
-<section class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-4 fade-in">Conferences</h2>
-        <div class="row g-4">
-            <div class="col-md-4 fade-in">
-                <a href="https://2023.innoconf.org/" target="_blank" class="card zoom text-decoration-none">
-                    <div class="card-body">
-                        <h5 class="card-title">2023 IEEE Conference on Innovation Management</h5>
-                        <p class="card-text">June 2023</p>
-                        <p class="card-text">Attendee</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 fade-in">
-                <a href="https://ssdbm.org/2023/" target="_blank" class="card zoom text-decoration-none">
-                    <div class="card-body">
-                        <h5 class="card-title">35th International Conference on Scientific and Statistical Database Management</h5>
-                        <p class="card-text">July 2023</p>
-                        <p class="card-text">Attendee</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 fade-in">
-                <a href="https://ghc.anitab.org/" target="_blank" class="card zoom text-decoration-none">
-                    <div class="card-body">
-                        <h5 class="card-title">Grace Hopper Celebration (GHC23)</h5>
-                        <p class="card-text">September 2023</p>
-                        <p class="card-text">Attendee</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 fade-in">
-                <a href="https://we23.swe.org/" target="_blank" class="card zoom text-decoration-none">
-                    <div class="card-body">
-                        <h5 class="card-title">Society of Women Engineers (WE23)</h5>
-                        <p class="card-text">October 2023</p>
-                        <p class="card-text">Attendee</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 fade-in">
-                <a href="https://www.ostem.org/page/conference" target="_blank" class="card zoom text-decoration-none">
-                    <div class="card-body">
-                        <h5 class="card-title">Out in Science, Technology, Engineering, and Mathematics (oSTEM) Conference</h5>
-                        <p class="card-text">November 2023</p>
-                        <p class="card-text">Attendee</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 fade-in">
-                <div class="col-md-4 fade-in">
-                    <a href="https://ghc.anitab.org/" target="_blank" class="card zoom text-decoration-none">
-                        <div class="card-body">
-                            <h5 class="card-title">Grace Hopper Celebration (GHC24)</h5>
-                            <p class="card-text">October 2024</p>
-                            <p class="card-text">Attendee</p>
-                        </div>
-                    </a>
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 fade-in">Conferences</h2>
+            <div class="timeline">
+                <div class="timeline-item left fade-in">
+                    <h5>Society of Women Engineers (WE24)</h5>
+                    <p class="date">October 2024</p>
+                    <p>Attendee</p>
+                    <a href="https://we24.swe.org/" target="_blank" class="link btn btn-primary">View Conference</a>
+                </div>
+                <div class="timeline-item right fade-in">
+                    <h5>Grace Hopper Celebration (GHC24)</h5>
+                    <p class="date">October 2024</p>
+                    <p>Attendee</p>
+                    <a href="https://ghc.anitab.org/" target="_blank" class="link btn btn-primary">View Conference</a>
+                </div>
+                <div class="timeline-item left fade-in">
+                    <h5>Out in Science, Technology, Engineering, and Mathematics (oSTEM) Conference</h5>
+                    <p class="date">November 2023</p>
+                    <p>Attendee</p>
+                    <a href="https://www.ostem.org/page/conference" target="_blank" class="link btn btn-primary">View Conference</a>
+                </div>
+                <div class="timeline-item right fade-in">
+                    <h5>Society of Women Engineers (WE23)</h5>
+                    <p class="date">October 2023</p>
+                    <p>Attendee</p>
+                    <a href="https://we23.swe.org/" target="_blank" class="link btn btn-primary">View Conference</a>
+                </div>
+                <div class="timeline-item left fade-in">
+                    <h5>Grace Hopper Celebration (GHC23)</h5>
+                    <p class="date">September 2023</p>
+                    <p>Attendee</p>
+                    <a href="https://ghc.anitab.org/" target="_blank" class="link btn btn-primary">View Conference</a>
+                </div>
+                <div class="timeline-item right fade-in">
+                    <h5>35th International Conference on Scientific and Statistical Database Management</h5>
+                    <p class="date">July 2023</p>
+                    <p>Attendee</p>
+                    <a href="https://ssdbm.org/2023/" target="_blank" class="link btn btn-primary">View Conference</a>
+                </div>
+                <div class="timeline-item left fade-in">
+                    <h5>2023 IEEE Conference on Innovation Management</h5>
+                    <p class="date">June 2023</p>
+                    <p>Attendee</p>
+                    <a href="https://2023.innoconf.org/" target="_blank" class="link btn btn-primary">View Conference</a>
                 </div>
             </div>
-            <a href="https://we24.swe.org/" target="_blank" class="card zoom text-decoration-none">
-                <div class="card-body">
-                    <h5 class="card-title">Society of Women Engineers (WE24)</h5>
-                        <p class="card-text">October 2024</p>
-                        <p class="card-text">Attendee</p>
-                    </div>
-                </a>
-            </div>
-            <!-- Add more organizations as needed -->
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Footer -->
     <footer class="bg-dark text-light text-center py-3">
