@@ -1,186 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Experience Timeline</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #333;
-        }
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 10px 0;
-        }
-        .timeline::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            width: 6px;
-            background-color: #ddd;
-            top: 0;
-            bottom: 0;
-            margin-left: -3px;
-        }
-        .container {
-            padding: 20px;
-            position: relative;
-            background-color: white;
-            border-radius: 6px;
-            width: 45%;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin: 10px 0;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.6s forwards;
-            transition: transform 0.4s, opacity 0.4s;
-        }
-        .container-left {
-            left: 0;
-        }
-        .container-right {
-            left: 55%;
-        }
-        .date {
-            font-size: 14px;
-            color: gray;
-        }
-        .company-logo {
-            width: 50px;
-            height: 40px; /* Set a fixed height to ensure all logos are the same size */
-            margin-right: 10px;
-            vertical-align: middle;
-        }
-        h2 {
-            margin: 0;
-            font-size: 18px;
-            color: #0056b3;
-        }
-        p {
-            margin: 5px 0;
-        }
-        ul {
-            margin: 5px 0 0;
-            padding-left: 20px;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @media (max-width: 800px) {
-            .container {
-                width: 90%;
-            }
-            .timeline::after {
-                left: 30px;
-                width: 3px;
-                margin-left: 0;
-            }
-            .container-left, .container-right {
-                left: 5%;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<h1>Work Experience</h1>
-<div class="timeline">
-    <div class="container container-left" style="animation-delay: 0.1s;">
-        <img src="wie_logo.jpeg" alt="USC Women in Engineering Logo" class="company-logo">
-        <h2>USC Women in Engineering</h2>
-        <div class="date">Jul 2023 - Present</div>
-        <p>Web Developer</p>
-        <ul>
-            <li>Developed the USC Women in Engineering (WIE) website, benefiting 2,440 members.</li>
-            <li>Created the WIE Leadership Conference 2024 website using HTML, CSS, and JavaScript.</li>
-        </ul>
-    </div>
-
-    <div class="container container-right" style="animation-delay: 0.2s;">
-        <img src="ford_logo.jpg" alt="Ford Motor Company Logo" class="company-logo">
-        <h2>Ford Motor Company</h2>
-        <div class="date">May 2024 - Aug 2024</div>
-        <p>Data Science Intern</p>
-        <ul>
-            <li>Contributed to Ford’s Electric Vehicle (EV) Charging Taskforce by building and optimizing data pipelines for handling big data on Google Cloud Platform (GCP) using BigQuery SQL and Dataform, reducing query runtime by 50%.</li>
-            <li>Expanded analytics capabilities to a global scale by analyzing Germany’s EV charging data, extracting critical insights to enhance the public charging experience.</li>
-            <li>Contributed to topic-wise sentiment analysis on charging station reviews, explored advanced Aspect-Based Sentiment Analysis (ABSA) and Prompt Engineering techniques, and improved the user sentiment dashboard.</li>
-            <li>Annotated user reviews for model training data, used Python to calculate agreement scores; participated in consensus-building meetings, improving agreement scores by 12%.</li>
-            <li>Improved data accuracy and integrity by resolving discrepancies in the data pipeline, ensuring high-quality, real-time insights for executive decision-making.</li>
-            <li>Collaborated with teams using Agile methodologies and tools like Rally and Jira to track work, manage user stories, and drive operational efficiencies through iterative development.</li>
-            <li>Participated in the Ford Quality Hackathon, where the team used machine learning and prompt engineering to evaluate user reviews, uncovering findings to enhance vehicle quality.</li>
-            <li>Participated in the Intern Better Tomorrow Challenge (ideated innovative platform-based solution for smarter collaboration).</li>
-            <li>Tools and Technologies used and learned: Python, SQL, JSON, APIs, Google Cloud Platform (GCP), BigQuery, Dataform, LookerStudio, Qlik Sense, MetaPix, Big Data, Data Analytics, Data Engineering, Data Pipelines, Data Processing, Data Annotation, Agreement Scores (Fleiss' Kappa), Dataloop, Vertex AI, Machine Learning, Natural Language Processing (NLP), Aspect-Based Sentiment Analysis (ABSA), Prompt Engineering, Large Language Models (LLMs), Rally, Jira, Agile Methodologies.</li>
-        </ul>
-    </div>
-
-    <div class="container container-left" style="animation-delay: 0.3s;">
-        <img src="lisus_logo.jpg" alt="LISUS Logo" class="company-logo">
-        <h2>LISUS Energy</h2>
-        <div class="date">Jun 2023 - Jul 2023</div>
-        <p>Data Science Intern</p>
-        <ul>
-            Analyzed remote-sensing satellite data using Python, Pandas, Numpy, and Matplotlib, contributing to a data-driven tool for sustainable exploration of critical minerals.
-        </ul>
-    </div>
-
-    <div class="container container-right" style="animation-delay: 0.4s;">
-        <img src="cat_logo.jpg" alt="Caterpillar Logo" class="company-logo">
-        <h2>Caterpillar Inc.</h2>
-        <div class="date">May 2021 - Jul 2021</div>
-        <p>Software Engineer Intern</p>
-        <ul>
-            <li>Collaborated with a team to develop an Ignition Delay Prediction Model for Compression Ignition engines, leveraging Python and Cantera to enhance engine failure analysis.</li>
-            <li>Applied data engineering techniques to manage and analyze large volumes of engine test data using Pandas, Numpy, and Matplotlib, enabling data-driven decision-making.</li>
-                <li>Rectified Ignition Delay Prediction discrepancy within company’s proprietary software, leading to more reliable engine performance insights.</li>
-                    <li>Streamlined code for over 50% reduction in runtime, optimizing the performance of the engine analysis software and improving overall program efficiency.</li>
-        </ul>
-    </div>
-
-    <div class="container container-left" style="animation-delay: 0.5s;">
-        <img src="nitk_logo.png" alt="National Institute of Technology Karnataka Logo" class="company-logo">
-        <h2>National Institute of Technology Karnataka</h2>
-        <div class="date">Mar 2020 - Feb 2021</div>
-        <p>Software Engineer Intern</p>
-        <ul>
-            <li>Led a team of three in the design and development of 12 interactive simulations for Engineering Thermodynamics, using HTML5, CSS3, and JavaScript to create engaging and educational tools.</li>
-                <li>Applied software development best practices and Agile methodologies to ensure the timely delivery and quality of simulations, enhancing the learning experience for students.</li>
-                    <li>Developed online tools that facilitated remote learning and improved accessibility to engineering concepts, fostering a hands-on approach to learning through visual animations and dynamic content.</li>
-        </ul>
-    </div>
-
-    <div class="container container-right" style="animation-delay: 0.6s;">
-        <img src="lt_logo.jpg" alt="Larsen & Toubro Logo" class="company-logo">
-        <h2>Larsen & Toubro</h2>
-        <div class="date">May 2019 - Jun 2019</div>
-        <p>Engineering Intern</p>
-        <ul>
-            Assisted in engineering projects, gaining hands-on experience in manufacturing and project management.
-        </ul>
-    </div>
-</div>
-
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -191,14 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css" rel="stylesheet">
-    <!-- Custom CSS for animations -->
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
             background-color: #f9f9f9;
+            padding: 80px 20px;
         }
         h1 {
             text-align: center;
@@ -206,43 +20,18 @@
             color: #333;
         }
         .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
-        .timeline::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            width: 6px;
-            background-color: #ddd;
-            top: 0;
-            bottom: 0;
-            margin-left: -3px;
+        .card {
+            border: none;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .container {
-            padding: 20px;
-            position: relative;
-            background-color: white;
-            border-radius: 6px;
-            width: 45%;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin: 10px 0;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.6s forwards;
-            transition: transform 0.4s, opacity 0.4s;
-        }
-        .container-left {
-            left: 0;
-        }
-        .container-right {
-            left: 55%;
-        }
-        .date {
-            font-size: 14px;
-            color: gray;
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
         .company-logo {
             width: 50px;
@@ -250,71 +39,18 @@
             margin-right: 10px;
             vertical-align: middle;
         }
-        h2 {
-            margin: 0;
-            font-size: 18px;
-            color: #0056b3;
-        }
-        p {
-            margin: 5px 0;
-        }
-        ul {
-            margin: 5px 0 0;
-            padding-left: 20px;
+        .date {
+            font-size: 14px;
+            color: gray;
         }
         .skills {
             margin-top: 10px;
             font-weight: normal;
             color: gray;
         }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @media (max-width: 800px) {
-            .container {
-                width: 90%;
-            }
-            .timeline::after {
-                left: 30px;
-                width: 3px;
-                margin-left: 0;
-            }
-            .container-left, .container-right {
-                left: 5%;
-            }
 
-            .project-card {
-            transition: transform 0.3s;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .project-card:hover {
-            transform: scale(1.05);
-        }
-        .project-card img {
-            width: 100%;
-            height: auto;
-        }
-        .navbar-dark .navbar-nav .nav-link {
-            transition: color 0.3s;
-        }
-        .navbar-dark .navbar-nav .nav-link:hover {
-            color: #f8f9fa !important;
-        }
-        .fade-in {
-            animation: fadeIn ease 3s;
-        }
-        h1 {
-    margin-top: 80px; /* Adjust this value as needed */
-}
+        #additional-exp{
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -342,28 +78,33 @@
             </div>
         </div>
     </nav>
-<br><br><br>
-    <h1 class="text-center mb-4 fade-in">Work Experience</h1>
-<div class="timeline">
-    <div class="container container-left" style="animation-delay: 0.1s;">
-        <img src="wie_logo.jpeg" alt="USC Women in Engineering Logo" class="company-logo">
-        <h2>USC Women in Engineering</h2>
-        <div class="date">Jul 2023 - Present</div>
-        <p>Web Developer</p>
-        <ul>
-            <li>Developed the USC Women in Engineering (WIE) website, benefiting 2,440 members.</li>
-            <li>Created the WIE Leadership Conference 2024 website using HTML, CSS, and JavaScript.</li>
-        </ul>
-        <div class="skills">Tools and Technologies: HTML, CSS, JavaScript, Web Development</div>
-    </div>
 
-    <div class="container container-right" style="animation-delay: 0.2s;">
-        <img src="ford_logo.jpg" alt="Ford Motor Company Logo" class="company-logo">
-        <h2>Ford Motor Company</h2>
-        <div class="date">May 2024 - Aug 2024</div>
-        <p>Data Science Intern</p>
-        <ul>
-            <li>Contributed to Ford’s Electric Vehicle (EV) Charging Taskforce by building and optimizing data pipelines for handling big data on Google Cloud Platform (GCP) using BigQuery SQL and Dataform, reducing query runtime by 50%.</li>
+    <h1 class="text-center mb-4">Work Experience</h1>
+    
+    <div class="timeline">
+        <div class="card p-4">
+            <div class="d-flex align-items-center mb-2">
+                <img src="wie_logo.jpeg" alt="USC Women in Engineering Logo" class="company-logo">
+                <h2 class="mb-0">USC Women in Engineering</h2>
+            </div>
+            <div class="date">Jul 2023 - Present</div>
+            <p>Web Developer</p>
+            <ul>
+                <li>Developed the USC Women in Engineering (WIE) website, benefiting 2,440 members.</li>
+            <li>Created the WIE Leadership Conference 2024 website using HTML, CSS, and JavaScript.</li>
+            </ul>
+            <div class="skills">Tools and Technologies: HTML, CSS, JavaScript, Web Development</div>
+        </div>
+
+        <div class="card p-4">
+            <div class="d-flex align-items-center mb-2">
+                <img src="ford_logo.jpg" alt="Ford Motor Company Logo" class="company-logo">
+                <h2 class="mb-0">Ford Motor Company</h2>
+            </div>
+            <div class="date">May 2024 - Aug 2024</div>
+            <p>Data Science Intern</p>
+            <ul>
+                <li>Contributed to Ford’s Electric Vehicle (EV) Charging Taskforce by building and optimizing data pipelines for handling big data on Google Cloud Platform (GCP) using BigQuery SQL and Dataform, reducing query runtime by 50%.</li>
             <li>Expanded analytics capabilities to a global scale by analyzing Germany’s EV charging data, extracting critical insights to enhance the public charging experience.</li>
             <li>Contributed to topic-wise sentiment analysis on charging station reviews, explored advanced Aspect-Based Sentiment Analysis (ABSA) and Prompt Engineering techniques, and improved the user sentiment dashboard.</li>
             <li>Annotated user reviews for model training data, used Python to calculate agreement scores; participated in consensus-building meetings, improving agreement scores by 12%.</li>
@@ -371,60 +112,126 @@
             <li>Collaborated with teams using Agile methodologies and tools like Rally and Jira to track work, manage user stories, and drive operational efficiencies through iterative development.</li>
             <li>Participated in the Ford Quality Hackathon, where the team used machine learning and prompt engineering to evaluate user reviews, uncovering findings to enhance vehicle quality.</li>
             <li>Participated in the Intern Better Tomorrow Challenge (ideated innovative platform-based solution for smarter collaboration).</li>
-        </ul>
-        <div class="skills">Tools and Technologies: Python, SQL, JSON, APIs, Google Cloud Platform (GCP), BigQuery, Dataform, LookerStudio, Qlik Sense, MetaPix, Big Data, Data Analytics, Data Engineering, Data Pipelines, Data Processing, Data Annotation, Agreement Scores (Fleiss' Kappa), Dataloop, Vertex AI, Machine Learning, Natural Language Processing (NLP), Aspect-Based Sentiment Analysis (ABSA), Prompt Engineering, Large Language Models (LLMs), Rally, Jira, Agile Methodologies</div>
-    </div>
+            
+            </ul>
+            <div class="skills">Tools and Technologies: Python, SQL, JSON, APIs, Google Cloud Platform (GCP), BigQuery, Dataform, LookerStudio, Qlik Sense, MetaPix, Big Data, Data Analytics, Data Engineering, Data Pipelines, Data Processing, Data Annotation, Agreement Scores (Fleiss' Kappa), Dataloop, Vertex AI, Machine Learning, Natural Language Processing (NLP), Aspect-Based Sentiment Analysis (ABSA), Prompt Engineering, Large Language Models (LLMs), Rally, Jira, Agile Methodologies.</div>
+        </div>
 
-    <div class="container container-left" style="animation-delay: 0.3s;">
-        <img src="lisus_logo.jpg" alt="LISUS Logo" class="company-logo">
-        <h2>LISUS Energy</h2>
-        <div class="date">Jun 2023 - Jul 2023</div>
-        <p>Data Science Intern</p>
-        <ul>
-            Analyzed remote-sensing satellite data using Python, Pandas, Numpy, and Matplotlib, contributing to a data-driven tool for sustainable exploration of critical minerals.
-        </ul>
-        <div class="skills">Tools and Technologies: NumPy, Pandas, Matplotlib, Python</div>
-    </div>
+        <div class="card p-4">
+            <div class="d-flex align-items-center mb-2">
+                <img src="lisus_logo.jpg" alt="LISUS Logo" class="company-logo">
+                <h2 class="mb-0">LISUS Energy</h2>
+            </div>
+            <div class="date">Jun 2023 - Jul 2023</div>
+            <p>Data Science Intern</p>
+            <ul>
+                Analyzed remote-sensing satellite data using Python, Pandas, Numpy, and Matplotlib, contributing to a data-driven tool for sustainable exploration of critical minerals.
+       </ul>
+            <div class="skills">Tools and Technologies: NumPy, Pandas, Matplotlib, Python</div>
+        </div>
 
-    <div class="container container-right" style="animation-delay: 0.4s;">
-        <img src="cat_logo.jpg" alt="Caterpillar Logo" class="company-logo">
-        <h2>Caterpillar Inc.</h2>
-        <div class="date">May 2021 - Jul 2021</div>
-        <p>Software Engineer Intern</p>
-        <ul>
-            <li>Collaborated with a team to develop an Ignition Delay Prediction Model for Compression Ignition engines, leveraging Python and Cantera to enhance engine failure analysis.</li>
+        <div class="card p-4">
+            <div class="d-flex align-items-center mb-2">
+                <img src="cat_logo.jpg" alt="Caterpillar Logo" class="company-logo">
+                <h2 class="mb-0">Caterpillar Inc.</h2>
+            </div>
+            <div class="date">May 2021 - Jul 2021</div>
+            <p>Software Engineer Intern</p>
+            <ul>
+                <li>Collaborated with a team to develop an Ignition Delay Prediction Model for Compression Ignition engines, leveraging Python and Cantera to enhance engine failure analysis.</li>
             <li>Applied data engineering techniques to manage and analyze large volumes of engine test data using Pandas, Numpy, and Matplotlib, enabling data-driven decision-making.</li>
                 <li>Rectified Ignition Delay Prediction discrepancy within company’s proprietary software, leading to more reliable engine performance insights.</li>
                     <li>Streamlined code for over 50% reduction in runtime, optimizing the performance of the engine analysis software and improving overall program efficiency.</li>
         </ul>
-        <div class="skills">Tools and Technologies: Cantera, NumPy, Pandas, Matplotlib, Python, Microsoft Excel, Data Analysis</div>
-    </div>
+            <div class="skills">Tools and Technologies: Cantera, NumPy, Pandas, Matplotlib, Python, Microsoft Excel, Data Analysis</div>
+        </div>
 
-    <div class="container container-left" style="animation-delay: 0.5s;">
-        <img src="nitk_logo.png" alt="National Institute of Technology Karnataka Logo" class="company-logo">
-        <h2>National Institute of Technology Karnataka</h2>
-        <div class="date">Mar 2020 - Feb 2021</div>
-        <p>Software Engineer Intern</p>
-        <ul>
-            <li>Led a team of three in the design and development of 12 interactive simulations for Engineering Thermodynamics, using HTML5, CSS3, and JavaScript to create engaging and educational tools.</li>
+        <div class="card p-4">
+            <div class="d-flex align-items-center mb-2">
+                <img src="nitk_logo.png" alt="NITK Logo" class="company-logo">
+                <h2 class="mb-0">National Institute of Technology Karnataka</h2>
+            </div>
+            <div class="date">Mar 2020 - Feb 2021</div>
+            <p>Software Engineer Intern</p>
+            <ul>
+                <li>Led a team of three in the design and development of 12 interactive simulations for Engineering Thermodynamics, using HTML5, CSS3, and JavaScript to create engaging and educational tools.</li>
                 <li>Applied software development best practices and Agile methodologies to ensure the timely delivery and quality of simulations, enhancing the learning experience for students.</li>
                     <li>Developed online tools that facilitated remote learning and improved accessibility to engineering concepts, fostering a hands-on approach to learning through visual animations and dynamic content.</li>
         </ul>
-        <div class="skills">Tools and Technologies: HTML, CSS, JavaScript, Team Leadership, Agile</div>
+            <div class="skills">Tools and Technologies: HTML, CSS, JavaScript, Team Leadership, Agile</div>
+        </div>
+
+        <div class="card p-4">
+            <div class="d-flex align-items-center mb-2">
+                <img src="lt_logo.jpg" alt="Larsen & Toubro Logo" class="company-logo">
+                <h2 class="mb-0">Larsen & Toubro</h2>
+            </div>
+            <div class="date">May 2019 - Jun 2019</div>
+            <p>Engineering Intern</p>
+            <ul>
+                Assisted in engineering projects, gaining hands-on experience in manufacturing and project management.
+            </ul>
+            <div class="skills">Tools and Technologies: Manufacturing, Machinery, Management</div>
+        </div>
     </div>
 
-    <div class="container container-right" style="animation-delay: 0.6s;">
-        <img src="lt_logo.jpg" alt="Larsen & Toubro Logo" class="company-logo">
-        <h2>Larsen & Toubro</h2>
-        <div class="date">May 2019 - Jun 2019</div>
-        <p>Engineering Intern</p>
-        <ul>
-            Assisted in engineering projects, gaining hands-on experience in manufacturing and project management.
-        </ul>
-        <div class="skills">Tools and Technologies: Manufacturing, Machinery, Management</div>
-    </div>
-</div>
+    <h1 id= "additional-exp" class="text-center mb-4">Additional Experience</h1>
+    
+    <div class="timeline">
+        <div class="card p-4">
+            <div class="d-flex align-items-center mb-2">
+                <img src="wie_logo.jpeg" alt="USC Women in Engineering Logo" class="company-logo">
+                <h2 class="mb-0">USC Women in Engineering</h2>
+            </div>
+            <div class="date">Oct 2023 - Present</div>
+            <p>Marketing Director</p>
+            <ul>
+                <li>Led a four-person team in developing and executing successful event promotion and marketing efforts, including creating engaging content for Instagram and LinkedIn.</li>
+            <li>Designed promotional flyers and marketing content.</li>
+            </ul>
+            <div class="skills">Tools and Technologies: Canva, Social Media Content, Marketing, Content Writing, Leadership</div>
+        </div>
 
+        <div class="card p-4">
+            <div class="d-flex align-items-center mb-2">
+                <img src="ms_logo.jpg" alt="Ford Motor Company Logo" class="company-logo">
+                <h2 class="mb-0">Microsoft AI Skills Program (TEALS)</h2>
+            </div>
+            <div class="date">Sep 2023 - Present</div>
+            <p>Computer Science Teaching Assistant</p>
+            <ul>
+                Supported the instruction of Advanced Placement (AP) Computer Science students at high schools in Lynwood, CA by assisting students in understanding foundational Computer Science concepts, guiding them through programming exercises, and troubleshooting technical issues.
+            </ul>
+            <div class="skills">Skills: Teaching, Fundamental CS concepts, Mentoring, Problem-Solving, Communication Skills</div>
+        </div>
+
+        <div class="card p-4">
+            <div class="d-flex align-items-center mb-2">
+                <img src="viterbiImg.webp" alt="LISUS Logo" class="company-logo">
+                <h2 class="mb-0">USC Viterbi Admissions and Student Engagement (VASE) Office</h2>
+            </div>
+            <div class="date">Jul 2023 - Aug 2024</div>
+            <p>Orientation Leader</p>
+            <ul>
+                Led and facilitated orientation for new graduate and undergraduate students at USC Viterbi, delivering presentations on student life, organizing campus-wide events, managing check-in and event logistics, and providing specialized training on inclusive practices and being a prosocial upstander, while actively fostering community and student engagement.</ul>
+            <div class="skills">Skills: Presentation Skills, Leadership, Event Planning, Public Speaking, Interpersonal Communication</div>
+        </div>
+
+        <div class="card p-4">
+            <div class="d-flex align-items-center mb-2">
+                <img src="vgsaImg.png" alt="Caterpillar Logo" class="company-logo">
+                <h2 class="mb-0">USC Viterbi Graduate Student Association (VGSA)</h2>
+            </div>
+            <div class="date">Jan 2024 - May 2024</div>
+            <p>Ambassador</p>
+            <ul>
+                <li>Serving as WIE's liaison (USC Women in Engineering) to VGSA (Viterbi Graduate Student Association), the student representative-led governing body for USC Viterbi graduate students.</li>
+            <li>Facilitated communication between WIE and VGSA, organizing collaborative events to mutually benefit and maximize impact for both organizations.</li>
+                </ul>
+            <div class="skills">Skills: Event Coordination, Effective Communication</div>
+        </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
