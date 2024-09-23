@@ -15,23 +15,25 @@
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
-        .zoom:hover {
-            transform: scale(1.05);
-            transition: 0.3s;
+        .organization {
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #007bff;
+            border-radius: 10px;
+            transition: transform 0.3s, background-color 0.3s;
         }
-        .card {
-    color: inherit; /* Inherit text color from parent */
-    text-decoration: none; /* Remove underline from link */
-}
-
-.card:hover {
-    background-color: #f0f0f0; /* Change this color to your desired hover color */
-    transition: background-color 0.3s; /* Smooth transition */
-}
-section.py-5 {
-    margin-top: 40px; /* Adjust this value as needed */
-}
-
+        .organization:hover {
+            transform: scale(1.05);
+            background-color: #f0f0f0;
+        }
+        .organization-icon {
+            font-size: 50px;
+            color: #007bff;
+        }
+        section.py-5 {
+            margin-top: 40px; /* Adjust this value as needed */
+        }
     </style>
 </head>
 <body>
@@ -59,64 +61,56 @@ section.py-5 {
     </nav>
 
     <!-- Organizations Section -->
-<!-- Organizations Section -->
-<section class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-4 fade-in">Organizations</h2>
-        <div class="row g-4">
-            <div class="col-md-4 fade-in">
-                <a href="https://engage.usc.edu/wie/home/" target="_blank" class="card zoom text-decoration-none">
-                    <div class="card-body">
-                        <h5 class="card-title">USC Viterbi Women in Engineering (WIE)</h5>
-                        <p class="card-text">Web Developer and Marketing Director</p>
-                    </div>
-                </a>
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 fade-in">Organizations</h2>
+            <div class="row g-4">
+                <div class="col-md-4 fade-in">
+                    <a href="https://engage.usc.edu/wie/home/" target="_blank" class="organization">
+                        <div class="organization-icon">👩‍💻</div>
+                        <h5 class="mt-2">USC Viterbi Women in Engineering (WIE)</h5>
+                        <p>Web Developer and Marketing Director</p>
+                    </a>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <a href="https://viterbigrad.usc.edu/student-engagement/" target="_blank" class="organization">
+                        <div class="organization-icon">🎓</div>
+                        <h5 class="mt-2">USC Viterbi Admissions and Student Engagement (VASE)</h5>
+                        <p>Orientation Leader</p>
+                    </a>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <a href="https://engage.usc.edu/uscvgsa/home/" target="_blank" class="organization">
+                        <div class="organization-icon">🌐</div>
+                        <h5 class="mt-2">USC Viterbi Graduate Student Association (VGSA)</h5>
+                        <p>Ambassador</p>
+                    </a>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <a href="https://rewritingthecode.org/" target="_blank" class="organization">
+                        <div class="organization-icon">📚</div>
+                        <h5 class="mt-2">Rewriting The Code (RTC)</h5>
+                        <p>Member</p>
+                    </a>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <a href="https://swe.org/" target="_blank" class="organization">
+                        <div class="organization-icon">🔧</div>
+                        <h5 class="mt-2">Society of Women Engineers (SWE)</h5>
+                        <p>Member</p>
+                    </a>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <a href="https://ostem.org/" target="_blank" class="organization">
+                        <div class="organization-icon">🌈</div>
+                        <h5 class="mt-2">Out in Science, Technology, Engineering, and Mathematics (oSTEM)</h5>
+                        <p>Member</p>
+                    </a>
+                </div>
+                <!-- Add more organizations as needed -->
             </div>
-            <div class="col-md-4 fade-in">
-                <a href="https://viterbigrad.usc.edu/student-engagement/" target="_blank" class="card zoom text-decoration-none">
-                    <div class="card-body">
-                        <h5 class="card-title">USC Viterbi Admissions and Student Engagement (VASE)</h5>
-                        <p class="card-text">Orientation Leader</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 fade-in">
-                <a href="https://engage.usc.edu/uscvgsa/home/" target="_blank" class="card zoom text-decoration-none">
-                    <div class="card-body">
-                        <h5 class="card-title">USC Viterbi Graduate Student Association (VGSA)</h5>
-                        <p class="card-text">Ambassador</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 fade-in">
-                <a href="https://rewritingthecode.org/" target="_blank" class="card zoom text-decoration-none">
-                    <div class="card-body">
-                        <h5 class="card-title">Rewriting The Code (RTC)</h5>
-                        <p class="card-text">Member</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 fade-in">
-                <a href="https://swe.org/" target="_blank" class="card zoom text-decoration-none">
-                    <div class="card-body">
-                        <h5 class="card-title">Society of Women Engineers (SWE)</h5>
-                        <p class="card-text">Member</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 fade-in">
-                <a href="https://ostem.org/" target="_blank" class="card zoom text-decoration-none">
-                    <div class="card-body">
-                        <h5 class="card-title">Out in Science, Technology, Engineering, and Mathematics (oSTEM)</h5>
-                        <p class="card-text">Member</p>
-                    </div>
-                </a>
-            </div>
-            <!-- Add more organizations as needed -->
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Footer -->
     <footer class="bg-dark text-light text-center py-3">
