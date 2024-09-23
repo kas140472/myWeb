@@ -1,73 +1,97 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KAS's Website</title>
-    
-    <link rel="stylesheet" href="styles.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hello.</h1>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Kriti Shukla</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./projects.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#orgs">Organizations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#conferences">Conferences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/kriti-shukla-258396182/">LinkedIn</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/kas140472">GitHub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <div class="navbar">
-        <!-- <a href="#intro">Intro</a> -->
-        <a href="#about">About Me</a>
-        <a href="./resume.html">Resume</a>
-        <a href="./projects.html">Portfolio</a>
-        <a href="#orgs">Organizations</a>
-        <a href="#conferences">Conferences</a>
-        <a href="https://www.linkedin.com/in/kriti-shukla-258396182/">LinkedIn</a>
-        <a href="https://github.com/kas140472">GitHub</a>
-        <!--<a href="./avocations.html">Avocations</a>-->
-        <a href="#contact">Contact</a>
-    </div>
+    <!-- Hero Section -->
+    <section class="bg-dark text-light text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Hello, I'm Kriti Shukla</h1>
+            <p class="lead">Data Scientist | Full-Stack Developer | Tech Enthusiast</p>
+            <a href="#about" class="btn btn-primary btn-lg">Learn More</a>
+        </div>
+    </section>
 
-    <!-- <section id="intro" class="intro">
-        <button type="button" class="cc-btn" onclick="location.href='./resume.html';">Resume</button>
-        <button type="button" class="lc-btn" onclick="location.href='./projects.html';">Projects</button>
-        <button type="button" class="cc-btn" onclick="location.href='https://www.linkedin.com/in/kriti-shukla-258396182/';">LinkedIn</button>
-        <button type="button" class="cc-btn" onclick="location.href='https://github.com/kas140472';">GitHub</button>
-    </section> -->
-    
-    <div id="about" class="about-me">I’m a data scientist with a background in computer science and engineering, passionate about using technology to solve societal challenges. I enjoy working with big data, machine learning, and analytics to find meaningful insights that can drive decisions. In addition to data science, I’m also interested in full-stack development and building end-to-end solutions.
-<br>
-I will be graduating in December 2024 with a Master’s in Computer Science, and I’m actively looking for full-time entry-level roles in data science, software development, or analyst positions.
-<br>
-In addition to my technical skills, I’ve developed leadership experience by contributing to various projects and initiatives that focus on innovation, community building, and collaboration. I’m committed to fostering inclusive and supportive environments.
-<br>
-I’m always excited to connect with others who share similar interests in technology, data, and social progress.
-</div>
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <h2>About Me</h2>
+                    <p>I’m a data scientist with a background in computer science and engineering, passionate about using technology to solve societal challenges. I enjoy working with big data, machine learning, and analytics to find meaningful insights that can drive decisions.</p>
+                    <p>I will be graduating in December 2024 with a Master’s in Computer Science, and I’m actively looking for full-time entry-level roles in data science, software development, or analyst positions. In addition to my technical skills, I’ve developed leadership experience by contributing to various projects and initiatives that focus on innovation, community building, and collaboration.</p>
+                    <p>I’m always excited to connect with others who share similar interests in technology, data, and social progress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div id="orgs" class="about-me">
-    I'm a member of the following organizations: <br>
-    <ul>
-        <li><a href="https://engage.usc.edu/wie/home/">USC Women in Engineering (Board member)</a></li>
-        <li><a href="https://rewritingthecode.org/">Rewriting The Code (RTC)</a></li>
-        <li><a href="https://swe.org/">Society of Women Engineers (SWE)</a></li>
-        <li><a href="https://ostem.org/">oSTEM</a></li>
-        <li><a href="https://oti.memberclicks.net/">Out To Innovate</a></li>
-        <li><a href="https://queertech.org/">QueerTech</a></li>
-    </ul>
-     <br>
-</div>
+    <!-- Organizations Section -->
+    <section id="orgs" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Organizations</h2>
+            <ul class="list-unstyled">
+                <li><a href="https://engage.usc.edu/wie/home/" target="_blank">USC Women in Engineering (Board member)</a></li>
+                <li><a href="https://rewritingthecode.org/" target="_blank">Rewriting The Code (RTC)</a></li>
+                <li><a href="https://swe.org/" target="_blank">Society of Women Engineers (SWE)</a></li>
+                <li><a href="https://ostem.org/" target="_blank">oSTEM</a></li>
+                <li><a href="https://oti.memberclicks.net/" target="_blank">Out To Innovate</a></li>
+                <li><a href="https://queertech.org/" target="_blank">QueerTech</a></li>
+            </ul>
+        </div>
+    </section>
 
-    <div id="conferences" class="about-me">
-        Conferences attended: <br>
-        <ul>
-            <li><a href="https://2023.innoconf.org/">2023 IEEE Conference on Innovation Management</a></li>
-            <li><a href="https://ssdbm.org/2023/">35th International Conference on Scientific and Statistical Database Management</a></li>
-            <li><a href="https://ghc.anitab.org/">Grace Hopper Celebration (GHC 23)</a></li>
-            <li><a href="https://we23.swe.org/">Society of Women Engineers (SWE) Conference (WE23)</a></li>
-<!--             <li><a href="https://lesbianswhotech.org/sanfrancisco2023/">Lesbians Who Tech Summit 2023 (#LWTSummit): virtual</a></li> -->
-        </ul>
-         <br>
-</div>
+    <!-- Conferences Section -->
+    <section id="conferences" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Conferences Attended</h2>
+            <ul class="list-unstyled">
+                <li><a href="https://2023.innoconf.org/" target="_blank">2023 IEEE Conference on Innovation Management</a></li>
+                <li><a href="https://ssdbm.org/2023/" target="_blank">35th International Conference on Scientific and Statistical Database Management</a></li>
+                <li><a href="https://ghc.anitab.org/" target="_blank">Grace Hopper Celebration (GHC 23)</a></li>
+                <li><a href="https://we23.swe.org/" target="_blank">Society of Women Engineers (SWE) Conference (WE23)</a></li>
+            </ul>
+        </div>
+    </section>
 
-<section id="contact" class="contact">
-    <button type="button" class="cc-btn" onclick="location.href='mailto:kritishukla0114@gmail.com?';">Send me an email!</button>
-</section>
+    <!-- Contact Section -->
+    <section id="contact" class="bg-dark text-light text-center py-5">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out via email or connect with me on LinkedIn.</p>
+            <a href="mailto:kritishukla0114@gmail.com" class="btn btn-primary">Send me an email!</a>
+        </div>
+    </section>
 
-    <!-- javascript -->
-    <script src="app.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
