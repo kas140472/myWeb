@@ -69,7 +69,7 @@
     /* Icon Styling */
     .icon-large {
         font-size: 4rem;
-        color: #007bff;
+        color:#0059b3;
         /* margin-bottom: 5px; */
         transition: color 0.3s ease;
     }
@@ -104,7 +104,7 @@
         font-size: 1.1rem;
         font-weight: bold;
         color: white;
-        background: linear-gradient(45deg, #007bff, #00d4ff);
+    background: linear-gradient(45deg, #004080, #0059b3);
         border: none;
         border-radius: 50px;
         text-decoration: none;
@@ -118,9 +118,86 @@
         transform: translateY(-5px);
     }
 
-    #title{
+    .title{
         color: #f8f9fa;
     }
+
+    .contact{
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+        font-family: 'Poppins', sans-serif;
+        /* font-weight: 600; */
+        color: whitesmoke;
+    }
+
+    .button-container {
+    display: flex;
+    justify-content: center; /* Centers the buttons horizontally */
+    gap: 20px; /* Adds space between the buttons */
+    margin-top: 20px; /* Adds space above the button container */
+}
+
+.btn-about {
+    padding: 5px 24px; /* Button padding */
+    font-size: 1.1rem; /* Button font size */
+    color: white;
+    background: linear-gradient(45deg, #0056b3, #0080ff); /* Darker blue shades */
+    border: none;
+    border-radius: 50px; /* Rounded corners */
+    box-shadow: 0px 4px 15px rgba(0, 86, 179, 0.5); /* Shadow for depth */
+    transition: all 0.4s ease-in-out; /* Smooth transition */
+    text-decoration: none; /* No underline */
+}
+
+.btn-about:hover {
+    background: linear-gradient(45deg, #0080ff, #0056b3); /* Hover color change */
+    box-shadow: 0px 6px 20px rgba(0, 86, 179, 0.8); /* Darker shadow on hover */
+    transform: scale(1.1); /* Slightly enlarge button on hover */
+}
+
+.btn-about:active {
+    transform: scale(1.05); /* Slightly shrink on click */
+    box-shadow: 0px 3px 10px rgba(0, 86, 179, 0.4); /* Reduce shadow on click */
+}
+
+.btn-explore {
+    padding: 5px 24px; /* Button padding */
+    font-size: 1.1rem; /* Button font size */
+    color: white;
+    background: linear-gradient(45deg, #004080, #0059b3); /* Dark blue gradient */
+    border: none;
+    border-radius: 50px; /* Rounded corners */
+    box-shadow: 0px 4px 15px rgba(0, 64, 128, 0.5); /* Shadow for depth */
+    transition: all 0.4s ease-in-out; /* Smooth transition */
+    text-decoration: none; /* No underline */
+}
+
+.btn-explore:hover {
+    background: linear-gradient(45deg, #0059b3, #004080); /* Hover color change */
+    box-shadow: 0px 6px 20px rgba(0, 64, 128, 0.8); /* Darker shadow on hover */
+    transform: scale(1.1); /* Slightly enlarge button on hover */
+}
+
+.btn-explore:active {
+    transform: scale(1.05); /* Slightly shrink on click */
+    box-shadow: 0px 3px 10px rgba(0, 64, 128, 0.4); /* Reduce shadow on click */
+}
+
+/* Media Query for Narrow Screens */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center buttons */
+    }
+
+    .btn-about, .btn-explore {
+        width: 100%; /* Full width on smaller screens */
+        margin-bottom: 1px; /* Space between buttons */
+    }
+}
+
+
+
     </style>
 </head>
 <body>
@@ -152,8 +229,13 @@
     <section class="parallax d-flex justify-content-center align-items-center">
         <div class="hero-text text-center fade-in">
             <h1 class="display-4">Hello, I'm Kriti Shukla</h1>
-            <p id="title" class="lead">Data Scientist | Software Engineer</p>
-            <a href="#about" class="btn btn-primary btn-lg">Explore My Work</a>
+            <p class="lead title">Data Scientist | Software Engineer</p>
+            <div class="button-container text-center mb-4">
+                <a href="#about" class="btn-about btn-lg">About Me</a>
+                <a href="#explore" class="btn-explore btn-lg">Explore My Work</a>
+            </div>
+            
+
         </div>
     </section>
 
@@ -227,14 +309,14 @@
     <!-- Contact Section -->
     <section id="contact" class="bg-dark text-light text-center py-5">
         <div class="container">
-            <h2 class="mb-4">Contact Me</h2>
+            <h2 class="mb-4 contact">Contact Me</h2>
             <!-- <p>Feel free to reach out via email or connect with me on social media.</p>
             <div class="d-flex justify-content-center gap-3">
                 <a href="mailto:kritishukla0112@gmail.com" class="btn btn-light">Email Me</a>
                 <a href="https://www.linkedin.com/in/kriti-shukla-258396182/" class="btn btn-light">LinkedIn</a>
                 <a href="https://github.com/kas140472" class="btn btn-light">GitHub</a>
             </div> -->
-            <p>Feel free to reach out via email or connect with me on social media.</p>
+            <p class="title">Feel free to reach out via email or connect with me on social media.</p>
             <div class="d-flex justify-content-center gap-3">
                 <a href="mailto:kritishukla0114@gmail.com" class="btn btn-outline-light"><i class="bi bi-envelope-fill"></i> Email</a>
                 <a href="https://www.linkedin.com/in/kriti-shukla-258396182/" target="_blank" class="btn btn-outline-light"><i class="bi bi-linkedin"></i> LinkedIn</a>
@@ -245,7 +327,7 @@
 
     <!-- Footer -->
     <footer class="bg-dark text-light text-center py-3">
-        <p>&copy; 2024 Kriti Shukla. All Rights Reserved.</p>
+        <p class="title">&copy; 2024 Kriti Shukla. All Rights Reserved.</p>
     </footer>
 
     <!-- Bootstrap JS -->
