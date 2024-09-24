@@ -45,6 +45,78 @@
             transform: scale(1.05);
             transition: 0.3s;
         }
+
+        /* Container Styling */
+    .container {
+        max-width: 1100px;
+    }
+
+    /* Card Custom Styling */
+    .card-custom {
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    /* Hover Effect for Cards */
+    .card-custom:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 30px rgba(0, 123, 255, 0.15);
+    }
+
+    /* Icon Styling */
+    .icon-large {
+        font-size: 4rem;
+        color: #007bff;
+        /* margin-bottom: 5px; */
+        transition: color 0.3s ease;
+    }
+
+    .card-custom:hover .icon-large {
+        color: #0056b3;
+    }
+
+    /* Heading and Text */
+    h2 {
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: 1px;
+        color: #212529;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        font-family: 'Poppins', sans-serif;
+        /* font-weight: 600; */
+        color: #212529;
+    }
+
+    p {
+        font-size: 1rem;
+        color: #6c757d;
+    }
+
+    /* Button Custom Styling */
+    .btn-custom {
+        padding: 5px 40px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: white;
+        background: linear-gradient(45deg, #007bff, #00d4ff);
+        border: none;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-bottom: 50px;
+    }
+
+    .btn-custom:hover {
+        background: linear-gradient(45deg, #0056b3, #00aaff);
+        box-shadow: 0 8px 15px rgba(0, 123, 255, 0.5);
+        transform: translateY(-5px);
+    }
     </style>
 </head>
 <body>
@@ -88,9 +160,65 @@
             <p class="lead fade-in">I’m a data scientist with a background in computer science and engineering, passionate about using technology to solve societal challenges. I enjoy working with big data, machine learning, and analytics to find meaningful insights that can drive decisions. In addition to data science, I’m also interested in full-stack development and building end-to-end solutions.</p>
             <p class="fade-in">I will be graduating in December 2024 with a Master’s in Computer Science, and I’m actively looking for full-time entry-level roles in data science, software development, or analyst positions.</p>
             <p class="lead fade-in">In addition to my technical skills, I’ve gained leadership experience by contributing to initiatives centered on community building, collaboration, and inclusion. I’m always eager to connect with others who share a passion for technology, data, and social progress.</p>
-            <p class="fade-in">Use the navigation menu at the top to find detailed information on my professional experience, technical projects, and more.</p>
         </div>
     </section>
+
+    <section id="explore" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4 fade-in">Explore My Work</h2>
+            <div class="row">
+                <!-- Resume Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-custom shadow-lg">
+                        <i class="bi bi-file-earmark-text icon-large"></i>
+                        <h3 class="mt-4">Resume</h3>
+                        <p>View my professional resume.</p>
+                        <a href="./resume.html" class="btn-custom">View Resume</a>
+                    </div>
+                </div>
+                <!-- Work Experience Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-custom shadow-lg">
+                        <i class="bi bi-briefcase icon-large"></i>
+                        <h3 class="mt-4">Work Experience</h3>
+                        <p>Check out the companies I've worked with and the roles I’ve had.</p>
+                        <a href="./experience.html" class="btn-custom">Work Experience</a>
+                    </div>
+                </div>
+                <!-- Projects Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-custom shadow-lg">
+                        <i class="bi bi-laptop icon-large"></i>
+                        <h3 class="mt-4">Projects</h3>
+                        <p>Explore some of the key projects I’ve worked on and contributed to.</p>
+                        <a href="./projects.html" class="btn-custom">View Projects</a>
+                    </div>
+                </div>
+                <!-- Conferences Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-custom shadow-lg">
+                        <i class="bi bi-calendar-event icon-large"></i>
+                        <h3 class="mt-4">Conferences</h3>
+                        <p>Discover the conferences I’ve attended to expand my knowledge and network in the tech industry.</p>
+                        <a href="./conferences.html" class="btn-custom">View Conferences</a>
+                    </div>
+                </div>
+                <!-- Organizations Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-custom shadow-lg">
+                        <i class="bi bi-people icon-large"></i>
+                        <h3 class="mt-4">Organizations</h3>
+                        <p>Learn about my involvement in various professional organizations.</p>
+                        <a href="./organizations.html" class="btn-custom">View Organizations</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    
+    
 
     <!-- Contact Section -->
     <section id="contact" class="bg-dark text-light text-center py-5">
