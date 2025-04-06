@@ -6,7 +6,11 @@
     <title>Kriti Shukla | Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Import font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        
         :root {
             --primary-color: #0059b3;
             --secondary-color: #f8f9fa;
@@ -16,6 +20,9 @@
             --text-color: #333;
             --gray-color: #6c757d;
             --border-color: #eaeaea;
+            --sidebar-width: 250px;
+            --sidebar-collapsed-width: 0px;
+            --header-height: 70px;
         }
         
         body {
@@ -27,93 +34,147 @@
             padding: 0;
         }
         
-        /* Header and Navigation */
+        /* Header */
         .header {
-            padding: 25px 0;
+            padding: 20px 30px;
             background-color: white;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-        }
-        
-        .nav-container {
+            height: var(--header-height);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
         
         .logo {
+            margin-left: 60px; /* Add margin to prevent overlap with the sidebar toggle */
+        }
+        
+        .social-links-header {
             display: flex;
-            align-items: center;
+            gap: 20px;
         }
         
-        .logo img {
-            height: 40px;
-            width: auto;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            gap: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            font-size: 16px;
+        .social-icon {
+            color: var(--dark-color);
+            font-size: 20px;
             transition: color 0.3s;
         }
         
-        .nav-links a:hover {
+        .social-icon:hover {
             color: var(--primary-color);
         }
         
-        .contact-button {
-            background-color: var(--secondary-color);
-            color: var(--text-color);
-            border: none;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: var(--header-height);
+            left: -100%; /* Start off-screen */
+            width: 450px; /* Increase the width of the sidebar */
+            height: calc(100vh - var(--header-height));
+            background-color: var(--light-bg); /* Light background */
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 30px 20px; /* Add padding for spacing */
+            overflow-y: auto;
+            z-index: 900;
+            transition: left 0.3s ease; /* Smooth transition for collapsing */
         }
         
-        .contact-button:hover {
-            background-color: var(--primary-color);
-            color: white;
+        .sidebar.active {
+            left: 0; /* Slide in when active */
         }
         
-        .contact-button i {
-            margin-right: 5px;
-        }
-        
-        .mobile-toggle {
-            display: none;
+        .sidebar-toggle {
+            position: absolute; /* Position it relative to the header */
+            top: 50%;
+            left: 20px; /* Adjust spacing from the left */
+            transform: translateY(-50%); /* Center vertically */
+            z-index: 1001;
             background: none;
             border: none;
             font-size: 24px;
             cursor: pointer;
+            color: var(--dark-color);
+        }
+        
+        .sidebar .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar .nav-links li {
+            margin-bottom: 20px; /* Add spacing between links */
+        }
+        
+        .sidebar .nav-links a {
+            padding: 10px 0;
+            display: block;
+            font-family: 'Roboto Mono', monospace; /* Code-like font */
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-color); /* Neutral text color */
+            text-decoration: none;
+            border-bottom: 1px solid var(--border-color); /* Add underline effect */
+            transition: color 0.3s, border-color 0.3s;
+        }
+        
+        .sidebar .nav-links a:hover {
+            color: var(--primary-color); /* Highlight on hover */
+            border-color: var(--primary-color); /* Change underline color */
+        }
+        
+        .sidebar-footer {
+            margin-top: 40px; /* Add spacing above footer */
+            text-align: left;
+        }
+        
+        .sidebar-footer .contact-button {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Add spacing between icon and text */
+            font-family: 'Roboto Mono', monospace; /* Code-like font */
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px 0;
+            transition: color 0.3s;
+        }
+        
+        .sidebar-footer .contact-button:hover {
+            color: var(--dark-color); /* Darker color on hover */
+        }
+        
+        .sidebar-footer .contact-button i {
+            font-size: 18px; /* Adjust icon size */
+        }
+        
+        /* Main Content */
+        .main-content {
+            margin-top: var(--header-height);
+            margin-left: 0; /* Default margin */
+            transition: margin-left 0.3s ease; /* Smooth transition for content shift */
+            text-align: center; /* Center the text horizontally */
+        }
+        
+        .sidebar-active .main-content {
+            margin-left: var(--sidebar-width); /* Shift content when sidebar is active */
         }
         
         /* Hero Section */
         .hero {
-            height: 100vh;
+            height: calc(100vh - var(--header-height)); /* Full height minus header */
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
             text-align: center;
             padding: 0 20px;
             max-width: 900px;
@@ -124,14 +185,17 @@
             margin-top: 60px;
         }
         
-        .hero-title {
-            font-size: 64px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--dark-color);
+        .hero-title, .hero-subtitle {
+            font-family: 'Roboto Mono', monospace; /* Apply code-like font */
+            font-style: normal; /* Ensure no italic styling */
+            font-weight: 400; /* Regular weight for code-like appearance */
+            color: var(--dark-color); /* Keep the existing color */
         }
         
         .typed-text {
+            font-family: 'Roboto Mono', monospace; /* Code-like font for the typing effect */
+            font-style: normal;
+            font-weight: bold;
             border-right: 3px solid;
             white-space: nowrap;
             overflow: hidden;
@@ -153,7 +217,7 @@
         .hero-subtitle {
             font-size: 20px;
             line-height: 1.6;
-            color: var(--text-color);
+            color: var (--text-color);
             max-width: 600px;
             margin: 0 auto 30px;
         }
@@ -190,7 +254,7 @@
         
         .btn-secondary {
             background-color: white;
-            color: var(--dark-color);
+            color: var (--dark-color);
             border: 1px solid #ddd;
             padding: 12px 28px;
             border-radius: 4px;
@@ -221,7 +285,7 @@
         .section-title {
             font-size: 36px;
             font-weight: 700;
-            color: var(--dark-color);
+            color: #333333; /* Darker title color */
             position: relative;
             display: inline-block;
             padding-bottom: 10px;
@@ -230,9 +294,9 @@
         .section-title::after {
             content: '';
             position: absolute;
-            width: 60px;
-            height: 3px;
-            background-color: var(--primary-color);
+            width: 80px;
+            height: 4px;
+            background-color: #ff6f61; /* Bright coral underline */
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
@@ -254,6 +318,8 @@
             transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
             border-left: 4px solid var(--primary-color);
+            max-width: 1400px; /* Increase the width of the card */
+            margin: 0 auto; /* Center the card */
         }
         
         .experience-card:hover {
@@ -291,19 +357,27 @@
         
         .experience-details {
             margin: 0;
-            padding-left: 20px;
+            padding: 0; /* Remove left padding */
         }
-        
+
+        .experience-details ul {
+            list-style: none !important; /* Forcefully remove bullet points */
+            padding: 0 !important; /* Remove default padding */
+            margin: 0 !important; /* Remove default margin */
+        }
+
         .experience-details li {
             margin-bottom: 10px;
             line-height: 1.5;
+            position: relative; /* For any additional styling */
+            padding-left: 0 !important; /* Remove left padding */
         }
         
         .skills-tag {
             display: inline-block;
             margin-top: 15px;
             font-size: 14px;
-            color: var(--gray-color);
+            color: var (--gray-color);
             background-color: var(--secondary-color);
             padding: 5px 12px;
             border-radius: 50px;
@@ -419,43 +493,32 @@
             margin-bottom: 30px;
         }
         
-        .social-icon {
-            color: var(--dark-color);
-            font-size: 22px;
-            transition: color 0.3s;
-        }
-        
-        .social-icon:hover {
-            color: var(--primary-color);
-        }
-        
         .copyright {
             font-size: 14px;
             color: var(--text-color);
         }
         
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            width: 100%;
+            height: calc(100% - var(--header-height));
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 800;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease; /* Smooth fade-in */
+        }
+        
+        .overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        
         /* Responsive Styles */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: white;
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .mobile-toggle {
-                display: block;
-            }
-            
             .hero-title {
                 font-size: 42px;
             }
@@ -486,170 +549,170 @@
             .experience-period {
                 margin-top: 5px;
             }
+            
+            .sidebar {
+                width: 80%;
+                left: -80%;
+            }
+            .sidebar {
+                width: 250px; /* Adjust width for smaller screens */
+            }
+        }
+
+        /* Modern Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .skills-category {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid #39c;
+        }
+
+        .skills-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .skills-category h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 45px;
+            display: flex;
+            align-items: center;
+        }
+
+        .skills-category h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 35px;
+            height: 35px;
+            background-color: rgba(57, 204, 204, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skills-category h3 i {
+            position: absolute;
+            left: 9px;
+            color: #39c;
+            font-size: 18px;
+        }
+
+        .skills-category ul {
+            list-style: none; /* Remove bullet points */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+            color: #555555; /* Neutral gray for text */
+            font-size: 16px;
+            line-height: 1.8;
+            text-align: left; /* Align text to the left */
+        }
+
+        .skills-category ul li {
+            position: relative;
+            padding: 8px 0; /* Add spacing between items */
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Remove this block to eliminate bullets completely */
+        .skills-category ul li::before {
+            content: ''; /* Set content to empty */
+            position: absolute;
+            left: 0;
+        }
+
+        .section-title::after {
+            background-color: #39c;
+        }
+
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .experience-details p {
+            font-weight: 600; /* Highlight section headers */
+            margin-bottom: 10px;
+            color: var(--dark-color);
+            text-align: left; /* Left-align the text */
+        }
+
+        .experience-details ul {
+            list-style: disc; /* Add bullet points */
+            padding-left: 20px; /* Add indentation for bullets */
+            margin: 0;
+            color: var(--text-color);
+            font-size: 16px;
+            line-height: 1.8; /* Increase line spacing for readability */
+            text-align: left; /* Left-align the list */
+        }
+
+        .experience-details ul li {
+            margin-bottom: 10px; /* Add spacing between bullet points */
+        }
+
+        .social-link {
+            display: flex; /* Use flexbox to align items horizontally */
+            align-items: center; /* Vertically center the icon and text */
+            gap: 8px; /* Add spacing between the icon and text */
+            font-size: 16px; /* Adjust font size for consistency */
+            color: var(--text-color); /* Neutral text color */
+        }
+
+        .social-link i {
+            font-size: 18px; /* Adjust icon size */
+            color: var(--primary-color); /* Icon color */
+        }
+
+        .social-link a {
+            text-decoration: none; /* Remove underline from the link */
+            color: var(--text-color); /* Neutral text color */
+            transition: color 0.3s ease;
+        }
+
+        .social-link a:hover {
+            color: var(--primary-color); /* Highlight text on hover */
+        }
+
+        .get-in-touch-title {
+            font-size: 18px; /* Make the text larger */
+            font-weight: 700; /* Make it bold */
+            color: var(--primary-color); /* Use the primary color for emphasis */
+            margin-bottom: 20px; /* Add spacing below the title */
+            text-align: center; /* Center the text */
+            border-bottom: 2px solid var(--primary-color); /* Add a bottom border for separation */
+            padding-bottom: 10px; /* Add padding below the text */
         }
     </style>
 </head>
 <body>
     <!-- Header Section -->
     <header class="header">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="#">KS</a>
-            </div>
-            
-            <button class="mobile-toggle" id="mobileToggle">
-                <i class="bi bi-list"></i>
-            </button>
-            
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
-            
-            <a href="#contact" class="contact-button">
-                <i class="bi bi-envelope"></i> Let's get in touch!
-            </a>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span id="typed-name" class="typed-text">Kriti Shukla</span>
-            </h1>
-            <p class="hero-subtitle">
-                Building intelligent systems through <span class="emphasis">code and data</span> — 
-                seeking a full-time role to create impactful technology solutions.
-            </p>
-            <div class="button-container">
-                <a href="./resume.html" class="btn-primary">My work</a>
-                <a href="#contact" class="btn-secondary">Let's connect</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- My Work Section -->
-    <section id="work" class="work-section">
-        <div class="section-header">
-            <h2 class="section-title">My Work</h2>
-        </div>
-        <!-- Work content would go here -->
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <div class="section-header">
-            <h2 class="section-title">Experience</h2>
+        <div class="logo">
+            <b>Portfolio</b>
         </div>
         
-        <div class="timeline">
-            <div class="experience-card">
-                <div class="experience-header">
-                    <h3>Ford Motor Company</h3>
-                    <span class="experience-period">May 2024 - Aug 2024</span>
-                </div>
-                <h4 class="position">Data Science Intern</h4>
-                <ul class="experience-details">
-                    <li>Contributed to Ford's Electric Vehicle (EV) Charging Taskforce by building and optimizing data pipelines on Google Cloud Platform.</li>
-                    <li>Expanded analytics capabilities to a global scale by analyzing Germany's EV charging data.</li>
-                    <li>Contributed to sentiment analysis on charging station reviews and improved the user sentiment dashboard.</li>
-                </ul>
-                <span class="skills-tag">Python • SQL • GCP • BigQuery • Machine Learning • NLP</span>
-            </div>
-            
-            <div class="experience-card">
-                <div class="experience-header">
-                    <h3>Caterpillar Inc.</h3>
-                    <span class="experience-period">May 2021 - Jul 2021</span>
-                </div>
-                <h4 class="position">Software Engineer Intern</h4>
-                <ul class="experience-details">
-                    <li>Developed an Ignition Delay Prediction Model for Compression Ignition engines.</li>
-                    <li>Applied data engineering techniques to analyze large volumes of engine test data.</li>
-                    <li>Streamlined code for over 50% reduction in runtime, optimizing engine analysis software.</li>
-                </ul>
-                <span class="skills-tag">Python • Cantera • Pandas • NumPy • Data Analysis</span>
-            </div>
-            
-            <div class="experience-card">
-                <div class="experience-header">
-                    <h3>USC Women in Engineering</h3>
-                    <span class="experience-period">Jul 2023 - Present</span>
-                </div>
-                <h4 class="position">Web Developer & Marketing Director</h4>
-                <ul class="experience-details">
-                    <li>Developed the USC Women in Engineering website, benefiting 2,440 members.</li>
-                    <li>Created the WIE Leadership Conference 2024 website using HTML, CSS, and JavaScript.</li>
-                    <li>Led a four-person team in developing event promotion and marketing efforts.</li>
-                </ul>
-                <span class="skills-tag">HTML • CSS • JavaScript • Web Development • Marketing</span>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="section-header">
-            <h2 class="section-title">Featured Projects</h2>
-        </div>
+        <button class="sidebar-toggle" id="sidebarToggle">
+            <i class="bi bi-list"></i>
+        </button>
         
-        <div class="projects-grid">
-            <div class="project-item">
-                <div class="project-content">
-                    <h3>Stock Portfolio Management App</h3>
-                    <p>An Android application enabling users to search stock symbols, view detailed stock information, and trade using virtual currency with real-time data through Finnhub APIs.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/kas140472/StockTradeAndroidApp" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                    <span class="skills-tag">Android • Java • Finnhub APIs • MongoDB • NodeJS</span>
-                </div>
-            </div>
-            
-            <div class="project-item">
-                <div class="project-content">
-                    <h3>Real-Time 3D Perception System</h3>
-                    <p>A real-time object detection and tracking system that identifies household objects, estimates distances, analyzes motion patterns, and predicts potential collisions.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/kas140472/Real-Time-3D-Perception" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                    <span class="skills-tag">YOLOv8 • OpenCV • Python • Computer Vision • Object Detection</span>
-                </div>
-            </div>
-            
-            <div class="project-item">
-                <div class="project-content">
-                    <h3>Advanced Stock Monitoring Platform</h3>
-                    <p>A cloud-hosted stock trading web application featuring real-time stock data, virtual trading, user portfolio management, and watchlist functionality.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/kas140472/StockTradeWebApp" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                    <span class="skills-tag">Angular • Node.js • Express • MongoDB • GCP • API Integration</span>
-                </div>
-            </div>
-            
-            <div class="project-item">
-                <div class="project-content">
-                    <h3>RecsHub - Movie and Fanfiction Recommender</h3>
-                    <p>A content-based recommender system using NLP techniques for text vectorization and similarity computation with an interactive Streamlit web interface.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/kas140472/recommender-systems" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                    <span class="skills-tag">Python • NLP • Streamlit • Machine Learning • Recommender Systems</span>
-                </div>
-            </div>
-        </div>
-        
-        <div class="view-all-projects">
-            <a href="./projects.html" class="btn-view-all">View All Projects</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="social-links">
+        <div class="social-links-header">
             <a href="mailto:kritishukla0114@gmail.com" class="social-icon">
                 <i class="bi bi-envelope"></i>
             </a>
@@ -660,13 +723,246 @@
                 <i class="bi bi-github"></i>
             </a>
         </div>
-        <p class="copyright">&copy; 2025 Kriti Shukla. All rights reserved.</p>
-    </footer>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <p class="get-in-touch-title">Let's connect!</p>
+            <ul class="nav-links">
+                <li class="social-link">
+                    <i class="bi bi-envelope"></i>
+                    <a href="mailto:kritishukla0114@gmail.com" target="_blank">kritishukla0114@gmail.com</a>
+                </li>
+                <li class="social-link">
+                    <i class="bi bi-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/kriti-shukla-258396182/" target="_blank">LinkedIn</a>
+                </li>
+                <li class="social-link">
+                    <i class="bi bi-github"></i>
+                    <a href="https://github.com/kas140472" target="_blank">GitHub</a>
+                </li>
+                <li class="social-link">
+                    <i class="bi bi-file-earmark-text"></i>
+                    <a href="./resume.html" target="_blank">Resume</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Overlay for mobile -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span id="typed-name" class="typed-text">Kriti Shukla</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Building intelligent systems through <span class="emphasis">code and data</span> — 
+                    seeking a full-time role to create impactful technology solutions.
+                </p>
+                <div class="button-container">
+                    <a href="#experience" class="btn-primary">My work</a>
+                    <a href="https://www.linkedin.com/in/kriti-shukla-258396182/" target="_blank" class="btn-secondary">Let's connect</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skills-category">
+                    <h3><i class="bi bi-code-slash"></i>Technical</h3>
+                    <ul>
+                        <li>Python, Java, JavaScript, SQL</li>
+                        <li>React, Angular, HTML, CSS, Bootstrap, Node.js</li>
+                        <li>TensorFlow, PyTorch, Scikit-learn</li>
+                        <li>Google Cloud Platform, Azure</li>
+                        <li>Data Pipelines, ETL processes</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h3><i class="bi bi-people"></i>Leadership</h3>
+                    <ul>
+                        <li>Project Team Lead @ Virtual Labs</li>
+                        <li>Marketing Director @ USC WIE</li>
+                        <li>Teaching Assistant (CS) @ Microsoft TEALS</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Experience</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>Ford Motor Company</h3>
+                        <span class="experience-period">May 2024 - Aug 2024</span>
+                    </div>
+                    <h4 class="position">Data Scientist Intern</h4>
+                    <div class="experience-details">
+                        <ul>
+                            <li>Built and optimized data pipelines for handling big data on Google Cloud Platform (GCP) using BigQuery SQL and Dataform, reducing query runtime by 50%.</li>
+                            <li>Expanded analytics capabilities to a global scale by analyzing Germany’s EV charging data, extracting critical insights, and creating dashboards to track KPIs for improving the public charging experience.</li>
+                            <li>Explored LLM prompt techniques for Aspect-Based Sentiment Analysis on charging station reviews, leading annotation efforts for training data and improving user sentiment dashboards with granular topic-level insights.</li>
+                        </ul>
+                    </div>
+                    <span class="skills-tag">Python • SQL • GCP • BigQuery • Machine Learning • LLM</span>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>USC Women in Engineering</h3>
+                        <span class="experience-period">Jul 2023 - Dec 2024</span>
+                    </div>
+                    <h4 class="position">Web Developer</h4>
+                    <div class="experience-details">
+                        <ul>
+                            <li>Developed the USC Women in Engineering website, benefiting 2,440 members.                                                                           </li>
+                            <li>Created the WIE Leadership Conference 2024 website using HTML, CSS, and JavaScript.</li>
+                            <li>Led a four-person team in developing event promotion and marketing efforts.</li>
+                        </ul>
+                    </div>
+                    <span class="skills-tag">HTML • CSS • JavaScript • Web Development • WordPress • Marketing • Content</span>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>Caterpillar</h3>
+                        <span class="experience-period">May 2021 - Jul 2021</span>
+                    </div>
+                    <h4 class="position">Software Engineer Intern</h4>
+                    <div class="experience-details">
+                        <ul>
+                            <li>Developed an Ignition Delay Prediction Model for Compression Ignition engines, improving engine failure analysis.</li>
+                            <li>Analyzed large volumes of engine test data.</li>
+                            <li>Streamlined code for over 50% reduction in runtime, optimizing performance.</li>
+                        </ul>
+                    </div>
+                    <span class="skills-tag">Python • Cantera • Pandas • NumPy • Data Analysis • Data Visualization • Excel</span>
+                </div>
+                <div class="view-all-projects">
+                    <a href="./experience.html" class="btn-view-all">View All Experience</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-item">
+                    <div class="project-content">
+                        <h3>Stock Portfolio Management App</h3>
+                        <p>An Android application enabling users to search stock symbols, view detailed stock information, and trade using virtual currency with real-time data through Finnhub APIs.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/kas140472/StockTradeAndroidApp" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                        <span class="skills-tag">Android • Java • Finnhub APIs • MongoDB • NodeJS</span>
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-content">
+                        <h3>Real-Time 3D Perception System</h3>
+                        <p>A real-time object detection and tracking system that identifies household objects, estimates distances, analyzes motion patterns, and predicts potential collisions.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/kas140472/Real-Time-3D-Perception" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                        <span class="skills-tag">YOLOv8 • OpenCV • Python • Computer Vision • Object Detection</span>
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-content">
+                        <h3>Advanced Stock Monitoring Platform</h3>
+                        <p>A cloud-hosted stock trading web application featuring real-time stock data, virtual trading, user portfolio management, and watchlist functionality.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/kas140472/StockTradeWebApp" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                        <span class="skills-tag">Angular • Node.js • Express • MongoDB • GCP • API Integration</span>
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-content">
+                        <h3>RecsHub - Movie and Fanfiction Recommender</h3>
+                        <p>A content-based recommender system using NLP techniques for text vectorization and similarity computation with an interactive Streamlit web interface.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/kas140472/recommender-systems" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                        <span class="skills-tag">Python • NLP • Streamlit • Machine Learning • Recommender Systems</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-all-projects">
+                <a href="./projects.html" class="btn-view-all">View All Projects</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="social-links">
+                <a href="mailto:kritishukla0114@gmail.com" class="social-icon">
+                    <i class="bi bi-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/kriti-shukla-258396182/" class="social-icon">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://github.com/kas140472" class="social-icon">
+                    <i class="bi bi-github"></i>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2025 Kriti Shukla. All rights reserved.</p>
+        </footer>
+    </div>
 
     <script>
-        // Mobile menu toggle functionality
-        document.getElementById('mobileToggle').addEventListener('click', function() {
-            document.getElementById('navLinks').classList.toggle('active');
+        // Sidebar toggle functionality
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+            document.body.classList.toggle('sidebar-active');
+        });
+        
+        // Close sidebar when clicking on overlay
+        document.getElementById('overlay').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+            document.body.classList.remove('sidebar-active');
+        });
+        
+        // Close sidebar when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('sidebar').classList.remove('active');
+                document.getElementById('overlay').classList.remove('active');
+                document.body.classList.remove('sidebar-active');
+            });
         });
         
         // Typing effect animation
