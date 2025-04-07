@@ -307,7 +307,6 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 30px;
-            margin-top: 40px;
         }
         
         .experience-card {
@@ -318,8 +317,6 @@
             transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
             border-left: 4px solid var(--primary-color);
-            max-width: 1400px; /* Increase the width of the card */
-            margin: 0 auto; /* Center the card */
         }
         
         .experience-card:hover {
@@ -329,12 +326,25 @@
         
         .experience-header {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         
-        .experience-header h3 {
+        .company-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .company-logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+        
+        .company-name {
             font-weight: 700;
             font-size: 22px;
             margin: 0;
@@ -342,7 +352,7 @@
         }
         
         .experience-period {
-            font-size: 14px;
+            font-size: 16px;
             color: var(--gray-color);
             font-weight: 500;
         }
@@ -357,27 +367,41 @@
         
         .experience-details {
             margin: 0;
-            padding: 0; /* Remove left padding */
+            padding: 0;
         }
-
+        
         .experience-details ul {
-            list-style: none !important; /* Forcefully remove bullet points */
-            padding: 0 !important; /* Remove default padding */
-            margin: 0 !important; /* Remove default margin */
+            list-style: none;
+            padding-left: 20px;
+            margin: 0;
+            color: var(--text-color);
+            font-size: 16px;
+            line-height: 1.8;
         }
-
-        .experience-details li {
+        
+        .experience-details ul li {
             margin-bottom: 10px;
-            line-height: 1.5;
-            position: relative; /* For any additional styling */
-            padding-left: 0 !important; /* Remove left padding */
+            position: relative;
+        }
+        
+        .experience-details ul li::before {
+            content: "▹";
+            position: absolute;
+            left: -20px;
+            color: var(--primary-color);
+        }
+        
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
         }
         
         .skills-tag {
             display: inline-block;
-            margin-top: 15px;
             font-size: 14px;
-            color: var (--gray-color);
+            color: var(--gray-color);
             background-color: var(--secondary-color);
             padding: 5px 12px;
             border-radius: 50px;
@@ -815,7 +839,10 @@
             <div class="timeline">
                 <div class="experience-card">
                     <div class="experience-header">
-                        <h3>Ford Motor Company</h3>
+                        <div class="company-info">
+                            <img src="ford_logo.jpg" alt="Ford Motor Company Logo" class="company-logo">
+                            <h3 class="company-name">Ford Motor Company</h3>
+                        </div>
                         <span class="experience-period">May 2024 - Aug 2024</span>
                     </div>
                     <h4 class="position">Data Scientist Intern</h4>
@@ -826,12 +853,24 @@
                             <li>Explored LLM prompt techniques for Aspect-Based Sentiment Analysis on charging station reviews, leading annotation efforts for training data and improving user sentiment dashboards with granular topic-level insights.</li>
                         </ul>
                     </div>
-                    <span class="skills-tag">Python • SQL • GCP • BigQuery • Machine Learning • LLM</span>
+                    <div class="skills-tags">
+                        <span class="skills-tag">Python</span>
+                        <span class="skills-tag">SQL</span>
+                        <span class="skills-tag">GCP</span>
+                        <span class="skills-tag">BigQuery</span>
+                        <span class="skills-tag">Dataform</span>
+                        <span class="skills-tag">Machine Learning</span>
+                        <span class="skills-tag">LLM</span>
+                        <span class="skills-tag">Agile</span>
+                    </div>
                 </div>
 
                 <div class="experience-card">
                     <div class="experience-header">
-                        <h3>USC Women in Engineering</h3>
+                        <div class="company-info">
+                            <img src="wie_logo.jpeg" alt="USC Women in Engineering Logo" class="company-logo">
+                            <h3 class="company-name">USC Women in Engineering</h3>
+                        </div>
                         <span class="experience-period">Jul 2023 - Dec 2024</span>
                     </div>
                     <h4 class="position">Web Developer</h4>
@@ -842,12 +881,23 @@
                             <li>Led a four-person team in developing event promotion and marketing efforts.</li>
                         </ul>
                     </div>
-                    <span class="skills-tag">HTML • CSS • JavaScript • Web Development • WordPress • Marketing • Content</span>
+                    <div class="skills-tags">
+                        <span class="skills-tag">HTML</span>
+                        <span class="skills-tag">CSS</span>
+                        <span class="skills-tag">JavaScript</span>
+                        <span class="skills-tag">Web Development</span>
+                        <span class="skills-tag">WordPress</span>
+                        <span class="skills-tag">Marketing</span>
+                        <span class="skills-tag">Content</span>
+                    </div>
                 </div>
-                
+
                 <div class="experience-card">
                     <div class="experience-header">
-                        <h3>Caterpillar</h3>
+                        <div class="company-info">
+                            <img src="cat_logo.jpg" alt="Caterpillar Logo" class="company-logo">
+                            <h3 class="company-name">Caterpillar Inc.</h3>
+                        </div>
                         <span class="experience-period">May 2021 - Jul 2021</span>
                     </div>
                     <h4 class="position">Software Engineer Intern</h4>
@@ -858,8 +908,18 @@
                             <li>Streamlined code for over 50% reduction in runtime, optimizing performance.</li>
                         </ul>
                     </div>
-                    <span class="skills-tag">Python • Cantera • Pandas • NumPy • Data Analysis • Data Visualization • Excel</span>
+                    <div class="skills-tags">
+                        <span class="skills-tag">Python</span>
+                        <span class="skills-tag">Cantera</span>
+                        <span class="skills-tag">Pandas</span>
+                        <span class="skills-tag">NumPy</span>
+                        <span class="skills-tag">Data Analysis</span>
+                        <span class="skills-tag">Data Visualization</span>
+                        <span class="skills-tag">Excel</span>
+                    </div>
                 </div>
+                
+                
                 <div class="view-all-projects">
                     <a href="./experience.html" class="btn-view-all">View All Experience</a>
                 </div>
